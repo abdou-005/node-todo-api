@@ -7,7 +7,7 @@ var {User} = require('./models/user');
 
 var app  = express();
 
-//app.use(bodyParser.json());
+app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.post('/todos', (req, res) =>{
     var todo = new Todo({
@@ -17,7 +17,6 @@ app.post('/todos', (req, res) =>{
         res.send(doc);
     },(e) => {
         res.status(400).send(e);
-
     });
 });
 
@@ -25,6 +24,7 @@ app.listen(3000, () => {
    console.log('Server started on port 3000')
 });
 
+module.exports = {app}; // ES6 syntax
 // var newTodo = new Todo({
 //     text:'Cook dinner'
 // });
