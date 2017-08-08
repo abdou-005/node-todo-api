@@ -45,6 +45,7 @@ app.listen(3000, () => {
 });
 
 module.exports = {app}; // ES6 syntax
+
 // var newTodo = new Todo({
 //     text:'Cook dinner'
 // });
